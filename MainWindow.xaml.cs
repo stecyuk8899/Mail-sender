@@ -39,11 +39,11 @@ namespace Mail_sender
                         Credentials = new NetworkCredential(user.Email, user.Password)
                     };
                 }
-                else
-                {
-                    toEmail.Text = toPassword.Password = "";
-                    MessageBox.Show("Error!", "Email", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+            }
+            if(!isSignUp)
+            {
+                toEmail.Text = toPassword.Password = "";
+                MessageBox.Show("Error!", "Email", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void AttachFile(MailMessage mail)
